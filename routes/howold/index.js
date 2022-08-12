@@ -32,7 +32,7 @@ module.exports = async function (fastify, opts) {
           "Seems you were born in the future, comeback then and i'd calculate your age :)"
         );
         error.code = 400;
-        throw new error();
+        throw error;
       }
       reply.send({ age });
     }
