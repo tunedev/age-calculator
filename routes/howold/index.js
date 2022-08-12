@@ -27,6 +27,13 @@ module.exports = async function (fastify, opts) {
     async (request, reply) => {
       const { dob } = request.query;
       const age = convertTimeStampToAge(dob);
+      if (age < 0) {
+        const error = new Error(
+          "Seems you were born in the future, comeback then and i'd calculate your age :)"
+        );
+        error.code = 400;
+        throw new error();
+      }
       reply.send({ age });
     }
   );
