@@ -1,6 +1,11 @@
 const { convertTimeStampToAge } = require("../../helper/convertTimestampToAge");
 
 module.exports = async function (fastify, opts) {
+  fastify.register(require("@fastify/rate-limit"), {
+    max: 3,
+    timeWindow: 1000,
+  });
+
   fastify.get(
     "/",
     {
