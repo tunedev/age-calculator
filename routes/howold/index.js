@@ -18,6 +18,9 @@ module.exports = async function (fastify, opts) {
                 {
                   format: "date",
                 },
+                {
+                  pattern: "^(0|[1-9][0-9]*)$",
+                },
               ],
             },
           },
@@ -25,7 +28,10 @@ module.exports = async function (fastify, opts) {
       },
     },
     async (request, reply) => {
-      const { dob } = request.query;
+      let { dob } = request.query;
+      if (/^(0|[1-9][0-9]*)$/.test(dob)) {
+        dob = Number(dob);
+      }
       const age = convertTimeStampToAge(dob);
       if (age < 0) {
         reply.code(400).send({

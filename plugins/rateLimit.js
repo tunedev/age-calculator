@@ -11,7 +11,6 @@ module.exports = fp(async function (fastify, opts) {
         request.headers["x-real-ip"] || // nginx
         request.headers["x-client-ip"] || // apache
         request.headers["x-forwarded-for"] || // use this only if you trust the header
-        request.session.username || // you can limit based on any session value
         request.ip
       );
     },
