@@ -5,6 +5,10 @@ const AutoLoad = require("@fastify/autoload");
 
 module.exports = async function (fastify, opts) {
   // Place here your custom code!
+  fastify.register(require("@fastify/rate-limit"), {
+    max: 3,
+    timeWindow: 1000,
+  });
 
   // Do not touch the following lines
 
