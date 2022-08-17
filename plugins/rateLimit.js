@@ -2,7 +2,7 @@
 
 const fp = require("fastify-plugin");
 
-module.exports = fp(async function (fastify, opts) {
+module.exports = fp(async function (fastify, _opts) {
   fastify.register(require("@fastify/rate-limit"), {
     max: 3,
     timeWindow: 1000,

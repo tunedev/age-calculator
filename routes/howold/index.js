@@ -1,6 +1,6 @@
 const { convertTimeStampToAge } = require("../../helper/convertTimestampToAge");
 
-module.exports = async function (fastify, opts) {
+module.exports = async function (fastify, _opts) {
   fastify.get(
     "/",
     {
@@ -19,7 +19,7 @@ module.exports = async function (fastify, opts) {
                   format: "date",
                 },
                 {
-                  pattern: "^(0|[1-9][0-9]*)$",
+                  pattern: "^d+$",
                 },
               ],
             },
@@ -29,7 +29,7 @@ module.exports = async function (fastify, opts) {
     },
     async (request, reply) => {
       let { dob } = request.query;
-      if (/^(0|[1-9][0-9]*)$/.test(dob)) {
+      if (/^\d+$/.test(dob)) {
         dob = Number(dob);
       }
       const age = convertTimeStampToAge(dob);
