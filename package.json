@@ -6,6 +6,9 @@
   "directories": {
     "test": "test"
   },
+  "tap": {
+    "check-coverage": false
+  },
   "scripts": {
     "test": "tap \"test/**/*.test.js\"",
     "start": "fastify start -a '0.0.0.0' -l info index.js",
