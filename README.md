@@ -8,28 +8,3 @@ Build and deploy a very simple API that does the following
 2.  Limit calls to `GET /howold` and prevent excessive usage from potentially ill-configured or malicious integrators. Only allow a maximum of 3 calls per second for each API client/caller
 
 See full details and instructions in this [Google Doc](https://docs.google.com/document/d/1ma5vKz0j34gwI9WYrZddMM1ENlQddGOVFJ5qdSq2QlQ)
-
-## Getting Started with Fastify-CLI [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
-
-This project was bootstrapped with Fastify-CLI.
-
-### Available Scripts
-
-In the project directory, you can run:
-
-#### `npm run dev`
-
-To start the app in dev mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-#### `npm start`
-
-For production mode
-
-#### `npm run test`
-
-Run the test cases.
-
-### Learn More
-
-To learn Fastify, check out the [Fastify documentation](https://www.fastify.io/docs/latest/).
